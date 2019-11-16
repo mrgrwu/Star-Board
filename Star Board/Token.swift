@@ -11,6 +11,5 @@ import Foundation
 // Create class for custom Token objects
 
 class Token {
-    var description: String = "*"
     var earned: Bool = false
 }

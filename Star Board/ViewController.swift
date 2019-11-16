@@ -18,7 +18,7 @@ class ViewController: UITableViewController {
         super.viewDidLoad()
         
         // Set up navigation bar
-        title = "I Am Working For:"
+        title = "I am working for:"
         
         // Create toolbar item objects
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)  // flexible spacer "spring"
@@ -47,7 +47,7 @@ class ViewController: UITableViewController {
         tokenArray = []
         numberTokensEarned = 0
         
-        title = "I Am Working For:"
+        title = "I am working for:"
         
         tableView.reloadData()
         setupGoal()
@@ -67,7 +67,7 @@ class ViewController: UITableViewController {
                 self?.goal = "(Goal)"
             }
             
-            self?.title = "I Am Working For: \(self?.goal ?? "")"
+            self?.title = "I am working for: \(self?.goal ?? "")"
             
             self?.setupTokens()  // Call method to prompt user for number of tokens/stars to earn
         }
@@ -104,7 +104,7 @@ class ViewController: UITableViewController {
     // Check if all tokens/stars have been earned, and provide option to clear list
     func checkAllTokensEarned() {
         if numberTokensEarned == tokenArray.count {
-            let ac = UIAlertController(title: "Good Job!", message: "You earned: \(goal)", preferredStyle: .alert)
+            let ac = UIAlertController(title: "Good job!", message: "You earned: \(goal)", preferredStyle: .alert)
             let clearAction = UIAlertAction(title: "Clear", style: .default) { (action) in
                 self.clearList()
             }
@@ -123,12 +123,19 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Token", for: indexPath)
-        cell.textLabel?.text = tokenArray[indexPath.row].description
-        cell.accessoryType = tokenArray[indexPath.row].earned ? .checkmark : .none  // Add checkmark accessory to cell depending on Token.earned property
+        if tokenArray[indexPath.row].earned {  // Adjust star image, text, and checkmark accessory of cell depending on Token.earned property
+            cell.imageView?.image = UIImage(named: "Star - Fill.png")
+            cell.textLabel?.text = "Earned!"
+            cell.accessoryType = .checkmark
+        } else {
+            cell.imageView?.image = UIImage(named: "Star - No Fill.png")
+            cell.textLabel?.text = "Star to earn"
+            cell.accessoryType = .none
+        }
         return cell
     }
     
-    // Toggle Token.earned property and list checkmark when row is tapped
+    // Toggle Token.earned property and list text and checkmark when row is tapped
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tokenArray[indexPath.row].earned = !tokenArray[indexPath.row].earned
         if tokenArray[indexPath.row].earned {
