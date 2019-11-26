@@ -10,9 +10,10 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    var tokenArray = [Token]()  // Create array of custom Token class objects
+    var tokenArray = [Token]()  // Create array of custom Token struct objects
     var numberTokensEarned: Int = 0
-    var goal: String = ""  // Description of goal to work for
+    var goal: String = "(Goal)"  // Description of goal to work for, with default value
+    var skill: String = "Star to earn"  // Description of skill to earn star, with default value
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class ViewController: UITableViewController {
     
     // Actions to add token/star or to perform when + (add) bar button is pressed
     @objc func addToken() {
-        let newToken = Token()  // Create new Token object for list
+        let newToken = Token(earned: false)  // Create new Token object for list
         
         tokenArray.append(newToken)
                 
@@ -46,6 +47,8 @@ class ViewController: UITableViewController {
     @objc func clearList() {
         tokenArray = []
         numberTokensEarned = 0
+        goal = "(Goal)"
+        skill = "Star to earn"
         
         title = "I am working for:"
         
@@ -63,16 +66,37 @@ class ViewController: UITableViewController {
             guard let description = ac?.textFields?[0].text else { return }  // Safely unwrap optional text field
             if description != "" {  // If text field was not an empty string:
                 self?.goal = description
-            } else {
-                self?.goal = "(Goal)"
             }
             
-            self?.title = "I am working for: \(self?.goal ?? "")"
+            self?.title = "I am working for: \(self?.goal ?? "(Goal)")"
             
-            self?.setupTokens()  // Call method to prompt user for number of tokens/stars to earn
+            self?.setupSkill()  // Call method to prompt user for skill to earn star
         }
         
         ac.addAction(submitAction)
+        present(ac, animated: true)
+    }
+    
+    // Prompt user for skill to earn star
+    func setupSkill() {
+        // Create alert controller and Submit and Skip actions
+        let ac = UIAlertController(title: "Skill to earn star:", message: nil, preferredStyle: .alert)
+        ac.addTextField()
+        
+        let submitAction = UIAlertAction(title: "Submit", style: .default) { [weak self, weak ac] (action) in
+            guard let description = ac?.textFields?[0].text else { return }  // Safely unwrap optional text field
+            if description != "" {  // If text field was not an empty string:
+                self?.skill = description
+            }
+            
+            self?.setupTokens()  // Call method to prompt user for number of tokens/stars to earn
+        }
+        let skipAction = UIAlertAction(title: "Skip", style: .cancel) { (action) in
+            self.setupTokens()  // Call method to prompt user for number of tokens/stars to earn
+        }
+        
+        ac.addAction(submitAction)
+        ac.addAction(skipAction)
         present(ac, animated: true)
     }
     
@@ -129,7 +153,7 @@ class ViewController: UITableViewController {
             cell.accessoryType = .checkmark
         } else {
             cell.imageView?.image = UIImage(named: "Star - No Fill.png")
-            cell.textLabel?.text = "Star to earn"
+            cell.textLabel?.text = skill
             cell.accessoryType = .none
         }
         return cell
@@ -156,8 +180,6 @@ class ViewController: UITableViewController {
             if tokenArray[indexPath.row].earned { numberTokensEarned -= 1 }
             tokenArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
         }
     }
 

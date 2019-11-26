@@ -8,8 +8,8 @@
 
 import Foundation
 
-// Create class for custom Token objects
+// Create struct for custom Token objects
 
-class Token {
-    var earned: Bool = false
+struct Token {
+    var earned: Bool
 }
