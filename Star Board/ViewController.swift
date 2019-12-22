@@ -23,10 +23,9 @@ class ViewController: UITableViewController {
         
         // Create toolbar item objects
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)  // flexible spacer "spring"
-        let clear = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearList))
         let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addToken))
         
-        toolbarItems = [clear, spacer, add]  // Set toolbar items array property
+        toolbarItems = [spacer, add]  // Set toolbar items array property
         navigationController?.isToolbarHidden = false  // Show toolbar
         
         setupGoal()
@@ -43,7 +42,7 @@ class ViewController: UITableViewController {
         tableView.insertRows(at: [indexPath], with: .automatic)
     }
     
-    // Actions to clear list or to perform when Clear bar button is pressed
+    // Actions to clear list
     @objc func clearList() {
         tokenArray = []
         numberTokensEarned = 0
