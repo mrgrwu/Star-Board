@@ -10,10 +10,32 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    var tokenArray = [Token]()  // Create array of custom Token struct objects
-    var numberTokensEarned: Int = 0
-    var goal: String = "(Goal)"  // Description of goal to work for, with default value
-    var skill: String = "Star to earn"  // Description of skill to earn star, with default value
+    // Set up User Defaults and property observers to store data for variables
+    let defaults = UserDefaults.standard
+    
+    var tokenArray = [Token]() {  // Create array of custom Token struct objects
+        didSet {
+            let encoder = JSONEncoder()
+            if let encoded = try? encoder.encode(tokenArray) {
+                defaults.set(encoded, forKey: "TokenArray")
+            }
+        }
+    }
+    var numberTokensEarned: Int = 0 {
+        didSet {
+            defaults.set(numberTokensEarned, forKey: "NumberTokensEarned")
+        }
+    }
+    var goal: String = "(Goal)" {  // Description of goal to work for, with default value
+        didSet {
+            defaults.set(goal, forKey: "Goal")
+        }
+    }
+    var skill: String = "Star to earn" {  // Description of skill to earn star, with default value
+        didSet {
+            defaults.set(skill, forKey: "Skill")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,12 +45,26 @@ class ViewController: UITableViewController {
         
         // Create toolbar item objects
         let spacer = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)  // flexible spacer "spring"
+        let clear = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(clearList))
         let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addToken))
         
-        toolbarItems = [spacer, add]  // Set toolbar items array property
+        toolbarItems = [clear, spacer, add]  // Set toolbar items array property
         navigationController?.isToolbarHidden = false  // Show toolbar
         
-        setupGoal()
+        // Read User Defaults data for variables if it exists
+        if let encoded = defaults.object(forKey: "TokenArray") as? Data {
+            let decoder = JSONDecoder()
+            if let decoded = try? decoder.decode([Token].self, from: encoded) {
+                tokenArray = decoded
+            }
+            numberTokensEarned = defaults.integer(forKey: "NumberTokensEarned")
+            goal = defaults.object(forKey: "Goal") as? String ?? "(Goal)"
+            skill = defaults.object(forKey: "Skill") as? String ?? "Star to earn"
+            
+            title = "I am working for: \(goal)"
+        } else {
+            setupGoal()
+        }
     }
     
     // Actions to add token/star or to perform when + (add) bar button is pressed
@@ -44,15 +80,22 @@ class ViewController: UITableViewController {
     
     // Actions to clear list
     @objc func clearList() {
-        tokenArray = []
-        numberTokensEarned = 0
-        goal = "(Goal)"
-        skill = "Star to earn"
-        
-        title = "I am working for:"
-        
-        tableView.reloadData()
-        setupGoal()
+        let ac = UIAlertController(title: "Clear Board", message: "Are you sure?", preferredStyle: .alert)
+        let clearAction = UIAlertAction(title: "Clear", style: .destructive) { (action) in
+            self.tokenArray = []
+            self.numberTokensEarned = 0
+            self.goal = "(Goal)"
+            self.skill = "Star to earn"
+            
+            self.title = "I am working for:"
+            
+            self.tableView.reloadData()
+            self.setupGoal()
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        ac.addAction(clearAction)
+        ac.addAction(cancelAction)
+        present(ac, animated: true)
     }
     
     // Prompt user for goal to work for, and show in toolbar
@@ -181,7 +224,6 @@ class ViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
-
 
 }
 

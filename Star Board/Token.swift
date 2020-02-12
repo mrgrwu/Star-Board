@@ -10,6 +10,6 @@ import Foundation
 
 // Create struct for custom Token objects
 
-struct Token {
+struct Token: Codable {
     var earned: Bool
 }
