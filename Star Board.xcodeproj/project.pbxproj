@@ -13,6 +13,8 @@
 		7E09FEBE237C8506007C59AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7E09FEBD237C8506007C59AB /* Assets.xcassets */; };
 		7E09FEC1237C8506007C59AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E09FEBF237C8506007C59AB /* LaunchScreen.storyboard */; };
 		7E09FEC9237CCD76007C59AB /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E09FEC8237CCD76007C59AB /* Token.swift */; };
+		7EC201252427F58F0072950C /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC201242427F58F0072950C /* GoalViewController.swift */; };
+		7ED2A699242C0E180094BB01 /* Star Board Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED2A698242C0E180094BB01 /* Star Board Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		7E09FEC0237C8506007C59AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7E09FEC2237C8506007C59AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E09FEC8237CCD76007C59AB /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		7EC201242427F58F0072950C /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
+		7ED2A698242C0E180094BB01 /* Star Board Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star Board Icon.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +62,13 @@
 			children = (
 				7E09FEB6237C8503007C59AB /* AppDelegate.swift */,
 				7E09FEB8237C8503007C59AB /* ViewController.swift */,
+				7EC201242427F58F0072950C /* GoalViewController.swift */,
 				7E09FEC8237CCD76007C59AB /* Token.swift */,
 				7E09FEBA237C8503007C59AB /* Main.storyboard */,
 				7E09FEBD237C8506007C59AB /* Assets.xcassets */,
 				7E09FEBF237C8506007C59AB /* LaunchScreen.storyboard */,
 				7E09FEC2237C8506007C59AB /* Info.plist */,
+				7ED2A698242C0E180094BB01 /* Star Board Icon.png */,
 			);
 			path = "Star Board";
 			sourceTree = "<group>";
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E09FEC1237C8506007C59AB /* LaunchScreen.storyboard in Resources */,
+				7ED2A699242C0E180094BB01 /* Star Board Icon.png in Resources */,
 				7E09FEBE237C8506007C59AB /* Assets.xcassets in Resources */,
 				7E09FEBC237C8503007C59AB /* Main.storyboard in Resources */,
 			);
@@ -139,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7E09FEC9237CCD76007C59AB /* Token.swift in Sources */,
+				7EC201252427F58F0072950C /* GoalViewController.swift in Sources */,
 				7E09FEB9237C8503007C59AB /* ViewController.swift in Sources */,
 				7E09FEB7237C8503007C59AB /* AppDelegate.swift in Sources */,
 			);
@@ -296,7 +304,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gregwu.Star-Board";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -314,7 +322,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.gregwu.Star-Board";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -170,14 +170,10 @@ class ViewController: UITableViewController {
     // Check if all tokens/stars have been earned, and provide option to clear list
     func checkAllTokensEarned() {
         if numberTokensEarned == tokenArray.count {
-            let ac = UIAlertController(title: "Good job!", message: "You earned: \(goal)", preferredStyle: .alert)
-            let clearAction = UIAlertAction(title: "Clear", style: .default) { (action) in
-                self.clearList()
+            if let vc = storyboard?.instantiateViewController(withIdentifier: "Goal") as? GoalViewController {
+                vc.goal = goal
+                present(vc, animated: true, completion: nil)
             }
-            let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-            ac.addAction(clearAction)
-            ac.addAction(cancelAction)
-            present(ac, animated: true)
         }
     }
     

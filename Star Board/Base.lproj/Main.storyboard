@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s4Z-Px-lxj">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="s4Z-Px-lxj">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,7 +18,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Token" textLabel="cnO-26-yWL" imageView="ogn-Uc-Nkr" style="IBUITableViewCellStyleDefault" id="KFx-zZ-TZX">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KFx-zZ-TZX" id="NKG-nn-CgF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -51,13 +50,82 @@
             </objects>
             <point key="canvasLocation" x="1079.2" y="150.67466266866569"/>
         </scene>
+        <!--Goal View Controller-->
+        <scene sceneID="2aq-zN-4Pe">
+            <objects>
+                <viewController storyboardIdentifier="Goal" id="ONP-Fh-QIh" customClass="GoalViewController" customModule="Star_Board" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v9C-2Q-6ge">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Board Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="nIB-St-eac">
+                                <rect key="frame" x="16" y="162" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nIB-St-eac" secondAttribute="height" multiplier="1:1" id="Zf7-9V-mMR"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good job!  You earned:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cku-c7-UsN">
+                                <rect key="frame" x="16" y="94" width="343" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="HHR-xM-eF4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Goal)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3s-XM-pEc">
+                                <rect key="frame" x="16" y="128" width="343" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="7yg-dQ-a8m"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X5R-dj-91Y">
+                                <rect key="frame" x="168" y="505" width="39" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="Ya9-tk-QRU"/>
+                                    <constraint firstAttribute="width" constant="39" id="qwv-PY-eaN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="okButtonPressed:" destination="ONP-Fh-QIh" eventType="touchUpInside" id="Ivc-do-uJ9"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="cku-c7-UsN" firstAttribute="trailing" secondItem="v9C-2Q-6ge" secondAttribute="trailingMargin" id="Bgr-UX-Ib0"/>
+                            <constraint firstItem="nIB-St-eac" firstAttribute="leading" secondItem="v9C-2Q-6ge" secondAttribute="leadingMargin" id="Fd4-o3-2KT"/>
+                            <constraint firstItem="X5R-dj-91Y" firstAttribute="top" secondItem="nIB-St-eac" secondAttribute="bottom" id="GDT-Q8-DoJ"/>
+                            <constraint firstItem="l3s-XM-pEc" firstAttribute="top" secondItem="cku-c7-UsN" secondAttribute="bottom" id="Lp0-uE-Rc0"/>
+                            <constraint firstItem="nIB-St-eac" firstAttribute="trailing" secondItem="v9C-2Q-6ge" secondAttribute="trailingMargin" id="X9q-pC-fbl"/>
+                            <constraint firstItem="l3s-XM-pEc" firstAttribute="leading" secondItem="v9C-2Q-6ge" secondAttribute="leadingMargin" id="a71-hS-rtd"/>
+                            <constraint firstItem="nIB-St-eac" firstAttribute="centerY" secondItem="v9C-2Q-6ge" secondAttribute="centerY" id="aoz-qr-cNh"/>
+                            <constraint firstItem="nIB-St-eac" firstAttribute="top" secondItem="l3s-XM-pEc" secondAttribute="bottom" id="e0c-91-4NN"/>
+                            <constraint firstItem="X5R-dj-91Y" firstAttribute="centerX" secondItem="v9C-2Q-6ge" secondAttribute="centerX" id="rfb-Gt-6bk"/>
+                            <constraint firstItem="cku-c7-UsN" firstAttribute="leading" secondItem="v9C-2Q-6ge" secondAttribute="leadingMargin" id="sEv-aC-DEQ"/>
+                            <constraint firstItem="l3s-XM-pEc" firstAttribute="trailing" secondItem="v9C-2Q-6ge" secondAttribute="trailingMargin" id="sNM-LS-QQa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="T1B-RY-bgv"/>
+                    </view>
+                    <connections>
+                        <outlet property="goalLabel" destination="l3s-XM-pEc" id="Hxh-09-TnO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wdZ-41-tin" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1832.8" y="149.77511244377811"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="61M-tE-cvW">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s4Z-Px-lxj" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="i4C-KD-hQq">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -72,5 +140,6 @@
     </scenes>
     <resources>
         <image name="Star - No Fill" width="100" height="100"/>
+        <image name="Star Board Icon.png" width="1024" height="1024"/>
     </resources>
 </document>
