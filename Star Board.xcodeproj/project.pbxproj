@@ -14,7 +14,7 @@
 		7E09FEC1237C8506007C59AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7E09FEBF237C8506007C59AB /* LaunchScreen.storyboard */; };
 		7E09FEC9237CCD76007C59AB /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E09FEC8237CCD76007C59AB /* Token.swift */; };
 		7EC201252427F58F0072950C /* GoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC201242427F58F0072950C /* GoalViewController.swift */; };
-		7ED2A699242C0E180094BB01 /* Star Board Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED2A698242C0E180094BB01 /* Star Board Icon.png */; };
+		7ED2A69B243057E90094BB01 /* Medal.png in Resources */ = {isa = PBXBuildFile; fileRef = 7ED2A69A243057E90094BB01 /* Medal.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +27,7 @@
 		7E09FEC2237C8506007C59AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7E09FEC8237CCD76007C59AB /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		7EC201242427F58F0072950C /* GoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoalViewController.swift; sourceTree = "<group>"; };
-		7ED2A698242C0E180094BB01 /* Star Board Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star Board Icon.png"; sourceTree = SOURCE_ROOT; };
+		7ED2A69A243057E90094BB01 /* Medal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Medal.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,7 +68,7 @@
 				7E09FEBD237C8506007C59AB /* Assets.xcassets */,
 				7E09FEBF237C8506007C59AB /* LaunchScreen.storyboard */,
 				7E09FEC2237C8506007C59AB /* Info.plist */,
-				7ED2A698242C0E180094BB01 /* Star Board Icon.png */,
+				7ED2A69A243057E90094BB01 /* Medal.png */,
 			);
 			path = "Star Board";
 			sourceTree = "<group>";
@@ -131,8 +131,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ED2A69B243057E90094BB01 /* Medal.png in Resources */,
 				7E09FEC1237C8506007C59AB /* LaunchScreen.storyboard in Resources */,
-				7ED2A699242C0E180094BB01 /* Star Board Icon.png in Resources */,
 				7E09FEBE237C8506007C59AB /* Assets.xcassets in Resources */,
 				7E09FEBC237C8503007C59AB /* Main.storyboard in Resources */,
 			);

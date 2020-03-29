@@ -17,7 +17,7 @@ class GoalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        goalLabel.text = goal
+        goalLabel.text = goal! + "!"
     }
     
     @IBAction func okButtonPressed(_ sender: UIButton) {

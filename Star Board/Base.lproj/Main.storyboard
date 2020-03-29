@@ -27,7 +27,7 @@
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cnO-26-yWL">
                                             <rect key="frame" x="75" y="0.0" width="284" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -58,13 +58,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star Board Icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="nIB-St-eac">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Medal.png" translatesAutoresizingMaskIntoConstraints="NO" id="nIB-St-eac">
                                 <rect key="frame" x="16" y="162" width="343" height="343"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="nIB-St-eac" secondAttribute="height" multiplier="1:1" id="Zf7-9V-mMR"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good job!  You earned:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cku-c7-UsN">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Good job, you earned" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cku-c7-UsN">
                                 <rect key="frame" x="16" y="94" width="343" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="HHR-xM-eF4"/>
@@ -73,7 +73,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Goal)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3s-XM-pEc">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(Goal)!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3s-XM-pEc">
                                 <rect key="frame" x="16" y="128" width="343" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="7yg-dQ-a8m"/>
@@ -139,7 +139,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Medal.png" width="1024" height="1024"/>
         <image name="Star - No Fill" width="100" height="100"/>
-        <image name="Star Board Icon.png" width="1024" height="1024"/>
     </resources>
 </document>
