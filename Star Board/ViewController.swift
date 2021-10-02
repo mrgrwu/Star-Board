@@ -147,16 +147,16 @@ class ViewController: UITableViewController {
         // Create alert controller and actions
         let ac = UIAlertController(title: "Number of stars to earn:", message: nil, preferredStyle: .alert)
         
-        let select5 = UIAlertAction(title: "5", style: .default) { (alert) in
+        let select5 = UIAlertAction(title: "5", style: .default) { (action) in
             for _ in 1...5 { self.addToken() }
         }
-        let select6 = UIAlertAction(title: "6", style: .default) { (alert) in
+        let select6 = UIAlertAction(title: "6", style: .default) { (action) in
             for _ in 1...6 { self.addToken() }
         }
-        let select10 = UIAlertAction(title: "10", style: .default) { (alert) in
+        let select10 = UIAlertAction(title: "10", style: .default) { (action) in
             for _ in 1...10 { self.addToken() }
         }
-        let select12 = UIAlertAction(title: "12", style: .default) { (alert) in
+        let select12 = UIAlertAction(title: "12", style: .default) { (action) in
             for _ in 1...12 { self.addToken() }
         }
         
